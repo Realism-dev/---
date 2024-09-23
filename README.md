@@ -34,12 +34,12 @@
    ```
 2. Компиляция и запуск задачи 1:
    ```bash
-   kotlinc solutions/Task1.kt -include-runtime -d Task1.jar
-   java -jar Task1.jar
+   kotlinc solutions/Task_1.kt -include-runtime -d Task_1.jar
+   java -jar Task_1.jar
    ```
    Или с Gradle:
    ```bash
-      ./gradlew run --args="Task1"
+      ./gradlew run --args="Task_1"
    ```
 
 ## Тесты

@@ -1199,20 +1199,15 @@ class Tests {
         test.result = 0
         test.main()
         val res = test.result
-        return res
+                return res
     }
 }
-
+// В класс вставляется рабочая функция, на основании которой генерится пул тестовых значений
 class Method (val l:Int,val r:Int,val p: Int) {
     var result = 0L
 
     fun main() {
-//        val input = readLine()!!.split(" ")
-//        val l = input[0].toLong()
-//        val r = input[1].toLong()
-//        val p = input[2].toInt()
         if (p < 2 || p <= r || l < 1 || r < 1 || l > r) {
-//            println(0)
             return
         }
         val f = LongArray(r-l+1)

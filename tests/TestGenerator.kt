@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 Realism-dev
+ *
+ * Этот файл лицензирован в соответствии с MIT License.
+ * Подробности см. в LICENSE файле в корне проекта.
+ */
 import kotlin.random.Random
 
 fun main() {
