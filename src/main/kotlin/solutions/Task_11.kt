@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -5,8 +6,11 @@
  * Подробности см. в LICENSE файле в корне проекта.
  */
 fun main() {
-    // Считываем данные
-    val input = readLine()!!.split(" ")
+    // Считываем входные данные контеста
+//    val input = readLine()!!.split(" ")
+    /* Тестовый вариант для запуска */
+    val input = arrayOf(1, 5, 7) // Вывод: 1
+
     val l = input[0].toInt()
     val r = input[1].toInt()
     val p = input[2].toInt()
@@ -14,12 +18,12 @@ fun main() {
         println(0)
         return
     }
-    val f = LongArray(r-l+1) // массив для "префиксов"
+    val f = LongArray(r - l + 1) // массив для "префиксов"
 
     // Вычисляем префиксные произведения: f(k) = f(k-1) * k % p
-    for (k in f.indices ) {
-        if(k == 0) f[0] = (l % p).toLong()
-        else f[k] = f[k - 1] * (l+k) % p
+    for (k in f.indices) {
+        if (k == 0) f[0] = (l % p).toLong()
+        else f[k] = f[k - 1] * (l + k) % p
     }
 
     // Определяем обратное по модулю p для последнего "префикса"
@@ -28,13 +32,13 @@ fun main() {
 
     // Считаем обратные числа F(k) = f(k)^-1 * f(k-1)% p
     for (k in r - l downTo 1) {
-        sum += (fInverse * f[k-1])%p
-        fInverse = (fInverse * (k+l)) % p
+        sum += (fInverse * f[k - 1]) % p
+        fInverse = (fInverse * (k + l)) % p
     }
     sum += fInverse
 
     // Выводим результат - сумма обратных чисел по модулю p
-    println(sum%p)
+    println(sum % p)
 }
 
 // Функция для определения обратного по модулю p,

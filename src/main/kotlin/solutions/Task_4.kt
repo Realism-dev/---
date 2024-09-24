@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -5,10 +6,13 @@
  * Подробности см. в LICENSE файле в корне проекта.
  */
 fun main() {
-    // Считываем количество чисел и число операций
-    val (n, k) = readLine()!!.split(" ").map { it.toInt() }
-    // Считываем числа
-    val numbers = readLine()!!.split(" ").map { it.toLong() }
+    // Считываем входные данные контеста
+//    val (n, k) = readLine()!!.split(" ").map { it.toInt() }
+//    val numbers = readLine()!!.split(" ").map { it.toLong() }
+
+    /* Тестовый вариант для запуска */
+    val (n, k) = Pair(5, 2)
+    val numbers = arrayOf(1, 2, 1, 3, 5) // Вывод: 16
 
     // Массив для хранения выгод от замены цифр
     val profits = mutableListOf<Long>()

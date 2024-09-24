@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -5,9 +6,12 @@
  * Подробности см. в LICENSE файле в корне проекта.
  */
 fun main() {
-    val (l, r) = readLine()!!.split(" ").map { it.toLong() }
-    val validNumbers = mutableSetOf<Long>()
+    // Считываем входные данные контеста
+//    val (l, r) = readLine()!!.split(" ").map { it.toLong() }
+    /* Тестовый вариант для запуска */
+    val (l, r) = Pair(4, 7) // Вывод:4
 
+    val validNumbers = mutableSetOf<Long>()
     // Проходим по всем возможным цифрам от 1 до 9
     for (digit in 1..9) {
         var number = digit.toLong() // Начинаем с числа, состоящего из одной цифры

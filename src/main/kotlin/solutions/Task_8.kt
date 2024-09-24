@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -8,9 +9,12 @@ operator fun <T> List<T>.component6(): T = get(5)
 operator fun <T> List<T>.component7(): T = get(6)
 operator fun <T> List<T>.component8(): T = get(7)
 fun main() {
-    // Считываем данные
-    val first = readLine()!!.split(" ").map { it.toDouble() }.toDoubleArray()
-    val second = readLine()!!.split(" ").map { it.toDouble() }
+    // Считываем входные данные контеста
+//    val first = readLine()!!.split(" ").map { it.toDouble() }.toDoubleArray()
+//    val second = readLine()!!.split(" ").map { it.toDouble() }
+    /* Тестовый вариант для запуска */
+    val first = doubleArrayOf(10.0,5.0)
+    val second = listOf(3.0,2.5,1.0,2.5,1.0,1.5,3.0,1.5)// Вывод: 2,500000 2,083333
 
     val tc = TestCase(
         params = Pair(first[0], first[1]),

@@ -1,26 +1,26 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
  * Этот файл лицензирован в соответствии с MIT License.
  * Подробности см. в LICENSE файле в корне проекта.
  */
+const val MAX_SIZE = 120 // Максимальный размер массива
 fun main() {
-    val MAX_SIZE = 120 // Максимальный размер массива
-    val elements = IntArray(MAX_SIZE) // Массив для хранения цен обедов
-
-    // Считываем количество элементов
-    val numberOfElements = readLine()!!.toInt()
-
-    // Если количество обедов равно 0, выводим 0 и выходим
-    if (numberOfElements == 0) {
-        println(0)
-        return
-    }
-
-    // Считываем цены обедов
-    for (i in 1..numberOfElements) {
-        elements[i] = readLine()!!.toInt()
-    }
+    // Считываем входные данные контеста
+//    val numberOfElements = readLine()!!.toInt()
+//    if (numberOfElements == 0) {
+//        println(0) // Если количество обедов равно 0, выводим 0 и выходим
+//        return
+//    }
+//    val elements = IntArray(solutions.MAX_SIZE) // Массив для хранения цен обедов
+//    for (i in 1..numberOfElements) { // Считываем цены обедов
+//        elements[i] = readLine()!!.toInt()
+//    }
+    /* Тестовый вариант для запуска */
+    val numberOfElements = 5
+    val elements = IntArray(MAX_SIZE)
+    intArrayOf(0, 35, 40, 101, 59, 63).copyInto(elements)
 
     // Инициализация динамического программирования
     val INF = MAX_SIZE * numberOfElements + 300 // Значение для инициализации

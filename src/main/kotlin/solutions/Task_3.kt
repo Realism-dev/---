@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -5,12 +6,15 @@
  * Подробности см. в LICENSE файле в корне проекта.
  */
 fun main() {
-    // Считываем количество сотрудников и время
-    val (_, t) = readLine()!!.split(" ").map { it.toInt() }
-    // Считываем этажи, на которых находятся сотрудники
-    val floors = readLine()!!.split(" ").map { it.toInt() }
-    // Считываем индекс уходящего сотрудника
-    val index = readLine()!!.toInt() - 1
+    // Считываем входные данные контеста
+//    val (_, t) = readLine()!!.split(" ").map { it.toInt() }
+//    val floors = readLine()!!.split(" ").map { it.toInt() }
+//    val index = readLine()!!.toInt() - 1
+
+    /* Тестовый вариант для запуска */
+    val (_, t) = Pair(6, 4)
+    val floors = arrayOf(1, 2, 3, 6, 8, 25)
+    val index = 5 - 1 // Вывод: 31
 
     // Находим минимум и максимум этажей
     val minFloor = floors.first()

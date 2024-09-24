@@ -1264,7 +1264,7 @@ class Method (val l:Int,val r:Int,val p: Int) {
                 // Если диапазон меньше порога, просто вычисляем сумму
                 var sum = 0L
                 for (x in l..r) {
-                    sum = (sum + modInverse(x, p)) % p
+                    sum = (sum + solutions.modInverse(x, p)) % p
                 }
                 sum
             } else {
@@ -1296,7 +1296,7 @@ class Method (val l:Int,val r:Int,val p: Int) {
             }
             return result
         }
-        private fun modInverse(a: Long, p: Long): Long {
+        private fun solutions.modInverse(a: Long, p: Long): Long {
             // Применение расширенного алгоритма Евклида для нахождения обратного элемента
             var y = 0L
             var x = 1L
@@ -1410,7 +1410,7 @@ class Method (val l:Int,val r:Int,val p: Int) {
 
         override fun compute(): Long {
             if (r - l <= 1) {
-                return if (l == r) modInverse(l, p) else (modInverse(l, p) + modInverse(r, p)) % p
+                return if (l == r) solutions.modInverse(l, p) else (solutions.modInverse(l, p) + solutions.modInverse(r, p)) % p
             }
 
             val mid = (l + r) / 2
@@ -1425,7 +1425,7 @@ class Method (val l:Int,val r:Int,val p: Int) {
             return (leftResult + rightResult) % p
         }
 
-        private fun modInverse(a: Long, m: Long): Long {
+        private fun solutions.modInverse(a: Long, m: Long): Long {
             if(a == 1L) return 1L
             if (a % m == 0L) return 0L // Если a кратно m, обратного значения не существует
 

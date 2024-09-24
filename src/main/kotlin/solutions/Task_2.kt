@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -5,10 +6,12 @@
  * Подробности см. в LICENSE файле в корне проекта.
  */
 fun main() {
-    // Считываем количество частей
-    val N = readLine()!!.toLong()
+    // Считываем входные данные контеста
+//    val N = readLine()!!.toLong()
+    /* Тестовый вариант для запуска */
+    val N = 6 // Вывод: 3
     var cuts = 0
-    var currentParts:Long = 1
+    var currentParts: Long = 1
 
     while (currentParts < N) {
         cuts++ // Увеличиваем количество разрезов

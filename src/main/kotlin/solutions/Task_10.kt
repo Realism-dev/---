@@ -1,3 +1,4 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
@@ -5,11 +6,15 @@
  * Подробности см. в LICENSE файле в корне проекта.
  */
 fun main() {
-    val n = readLine()!!.toInt() // Считываем количество вершин
-    val vertices = Array(n) { IntArray(2) } // Массив для хранения координат вершин
-    for (i in 0 until n) {
-        vertices[i] = readLine()!!.split(" ").map { it.toInt() }.toIntArray() // Считываем координаты
-    }
+    // Считываем входные данные контеста
+//    val n = readLine()!!.toInt() // Считываем количество вершин
+//    val vertices = Array(n) { IntArray(2) } // Массив для хранения координат вершин
+//    for (i in 0 until n) {
+//        vertices[i] = readLine()!!.split(" ").map { it.toInt() }.toIntArray() // Считываем координаты
+//    }
+    /* Тестовый вариант для запуска */
+    val n = 4 //Вывод: 1,000000
+    val vertices = arrayOf(intArrayOf(0, 0), intArrayOf(0, 2), intArrayOf(2, 2), intArrayOf(2, 0))
 
     // Если вершина одна, выводим координату X этой вершины
     if (n == 1) {
@@ -31,15 +36,15 @@ fun main() {
     var left = vertices.minOf { it[0] }.toDouble() // Минимальная x-координата
     var right = vertices.maxOf { it[0] }.toDouble() // Максимальная x-координата
     val precision = 1e-7 // Точность для бинарного поиска
-    var leftArea:Double = 0.0 // Площадь левой части многоугольника
-    var mid:Double = 0.0 // Текущая x-координата
+    var leftArea: Double = 0.0 // Площадь левой части многоугольника
+    var mid: Double = 0.0 // Текущая x-координата
 
     // Начинаем бинарный поиск в цикле
     while (true) {
         mid = (left + right) / 2
         leftArea = calculateLeftArea(vertices, mid)
         // Если разница площадей меньше заявленной точности, прерываем цикл
-        if(Math.abs(halfArea - leftArea) <= precision) break
+        if (Math.abs(halfArea - leftArea) <= precision) break
         // Сравниваем площади
         if (leftArea < halfArea) {
             left = mid // Если площадь меньше, ищем вправо
@@ -57,7 +62,7 @@ fun calculatePolygonArea(vertices: Array<IntArray>): Double {
     var area = 0.0
     for (i in 0 until vertices.size) {
         val j = (i + 1) % vertices.size
-        area += (vertices[i][0] *vertices[j][1] - vertices[j][0]* vertices[i][1])
+        area += (vertices[i][0] * vertices[j][1] - vertices[j][0] * vertices[i][1])
     }
     return Math.abs(area) / 2.0
 }

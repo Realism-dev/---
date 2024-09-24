@@ -1,18 +1,18 @@
+package solutions
 /*
  * Copyright (c) 2024 Realism-dev
  *
  * Этот файл лицензирован в соответствии с MIT License.
  * Подробности см. в LICENSE файле в корне проекта.
  */
+const val startSum = 1L // Начальная сумма, для расчетов она не нужна
 fun main() {
-    // Начальная сумма, для расчетов она не нужна
-    val startSum = 1L
-
-    // Считываем значение N
-    val N = readLine()!!.toLong() - startSum
-
-    // Считываем номиналы A, B, C
-    val coins = readLine()!!.split(" ").map { it.toInt() }
+    // Считываем входные данные контеста
+//    val N = readLine()!!.toLong() - solutions.startSum
+//    val coins = readLine()!!.split(" ").map { it.toInt() }
+    /* Тестовый вариант для запуска */
+    val N = 15 - startSum
+    val coins = arrayOf(4, 7, 9) // Вывод: 9
 
     val mod = coins.maxOrNull() ?: 0
     val fullCycles = N / mod // Считаем общее число циклов
