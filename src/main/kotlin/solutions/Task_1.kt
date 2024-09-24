@@ -5,7 +5,6 @@
  * Подробности см. в LICENSE файле в корне проекта.
  *
  */
-
 fun main(){
     // Считываем входные данные
     val input = readLine()!!.split(" ").map { it.toInt() }
